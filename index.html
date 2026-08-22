@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chitkara Connect | Campus Navigator and Lost & Found</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- custom cursor removed -->
+  <!-- top loader -->
+  <div class="top-loader" id="top-loader" aria-hidden="true"><div class="bar"></div></div>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="images/images.png" alt="Chitkara University" class="brand-logo">
+        <div class="brand-content">
+          <h1>CHITKARA</h1>
+          <span>CONNECT</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <button id="theme-toggle" class="menu-toggle" title="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Campus Navigator</a></li>
+        <li><a href="lost-found.html" class="nav-link"><i class="fa-solid fa-box-open"></i> Lost & Found</a></li>
+        <li id="auth-area"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">
+          <i class="fa-solid fa-shield-halved"></i>
+          Student Utility Platform
+        </div>
+
+        <h1>Explore Campus, <span>Find Blocks</span> and Recover Lost Items.</h1>
+
+        <p>
+          CHITKARA CONNECT is a smart campus support website for Chitkara University students.
+          It helps freshers locate important campus blocks and allows students to report lost or found items securely.
+        </p>
+
+        <div class="hero-actions">
+          <a href="map.html" class="btn btn-primary">
+            <i class="fa-solid fa-compass"></i> Open Campus Map
+          </a>
+
+          <a href="lost-found.html" class="btn btn-secondary btn-browse">
+            <i class="fa-solid fa-box-open"></i>
+            <span class="btn-text">Browse Lost &amp; Found</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="preview-grid">
+          <div class="preview-box">
+            <i class="fa-solid fa-microchip"></i>
+            <h3>Turing Block</h3>
+            <p>CSE, AI & ML, and advanced computing department.</p>
+          </div>
+
+          <div class="preview-box">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Galileo Block</h3>
+            <p>Computer Science Engineering and software development department.</p>
+          </div>
+
+          <div class="preview-box">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>Square One</h3>
+            <p>Campus food court and student refreshment area.</p>
+          </div>
+
+          <div class="preview-box">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>Library</h3>
+            <p>Central learning resource and reading facility.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action (fills the blank area with a professional panel + animation) -->
+  <section class="cta">
+    <div class="container cta-grid">
+      <div class="cta-text" data-animate="fade-up">
+        <span class="small-label">Get Connected</span>
+        <h2>Join CHITKARA CONNECT — Your Campus Companion</h2>
+        <p>
+          Sign up to access the campus map, report lost & found items, and stay informed about campus events.
+          Secure, fast, and built for students.
+        </p>
+
+        <div class="cta-actions">
+          <a href="signup.html" class="btn btn-primary">Get Started</a>
+          <a href="map.html" class="btn btn-secondary">Explore Map</a>
+        </div>
+      </div>
+
+      <div class="cta-visual" data-animate="float">
+        <div class="device-mock">
+          <img src="images/Higher-Education.jpg" alt="Campus preview" class="device-img" />
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span>Project Features</span>
+        <h2>One Website for Campus Navigation and Item Recovery</h2>
+        <p>
+          This project solves real campus problems by combining an interactive campus navigator,
+          a student login system, and a secure lost and found portal.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Campus Block Finder</h3>
+          <p>
+            Search for academic blocks, food courts, facilities, and important campus places using an interactive map.
+          </p>
+          <a href="map.html" class="btn btn-secondary">Open Map</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+          <h3>Lost & Found Portal</h3>
+          <p>
+            Logged-in students can post lost or found items with category, location, image, and contact information.
+          </p>
+          <a href="lost-found.html" class="btn btn-secondary">View Items</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+          <h3>Secure Student Access</h3>
+          <p>
+            Students can sign up and log in using a Chitkara University email ID. Only item owners can remove their
+            posts.
+          </p>
+          <a href="signup.html" class="btn btn-secondary">Create Account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p><b>CHITKARA CONNECT</b></p>
+      <p>Built for Chitkara University Punjab Campus</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/main.js"></script>
+  <!-- redirect handled in auth/login flow -->
+</body>
+
+</html>

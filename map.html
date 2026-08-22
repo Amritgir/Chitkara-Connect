@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campus Navigator | Chitkara Connect</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="images/images.png" alt="Chitkara University" class="brand-logo">
+        <div class="brand-content">
+          <h1>CHITKARA</h1>
+          <span>CONNECT</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Campus Navigator</a></li>
+        <li><a href="lost-found.html" class="nav-link"><i class="fa-solid fa-box-open"></i> Lost & Found</a></li>
+        <li id="auth-area"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Campus Navigator</h1>
+      <p>Search and locate important blocks and facilities inside Chitkara University Punjab Campus.</p>
+    </div>
+
+    <div class="map-layout">
+      <aside class="sidebar">
+        <div class="search-wrap">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" id="map-search" placeholder="Search block, branch, or facility..." />
+        </div>
+
+        <div class="chips">
+          <button class="chip active" data-category="all">All</button>
+          <button class="chip" data-category="Academic">Academic</button>
+          <button class="chip" data-category="Facility">Facilities</button>
+          <button class="chip" data-category="Food">Food</button>
+        </div>
+
+        <div class="block-list" id="block-list"></div>
+      </aside>
+
+      <section class="map-box">
+        <div id="campus-map"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p><b>CHITKARA CONNECT</b> — Campus Navigator</p>
+      <p><a href="lost-found.html">Go to Lost & Found</a></p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+</body>
+
+</html>

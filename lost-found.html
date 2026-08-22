@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lost & Found | Chitkara Connect</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="images/images.png" alt="Chitkara University" class="brand-logo">
+        <div class="brand-content">
+          <h1>CHITKARA</h1>
+          <span>CONNECT</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="map.html" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Campus Navigator</a></li>
+        <li><a href="lost-found.html" class="nav-link"><i class="fa-solid fa-box-open"></i> Lost & Found</a></li>
+        <li id="auth-area"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Lost & Found Portal</h1>
+      <p>Browse lost and found items reported inside Chitkara University Punjab Campus.</p>
+    </div>
+
+    <div class="toolbar">
+      <div>
+        <h2>Item Bulletin</h2>
+        <p style="color:#64748b;">
+          Only logged-in students can post items. Only the post owner can remove an item.
+        </p>
+      </div>
+
+      <button class="btn btn-primary" id="open-modal-btn" type="button">
+        <i class="fa-solid fa-plus"></i> Add Item
+      </button>
+    </div>
+
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter-btn active" data-type="all" type="button">All Items</button>
+        <button class="filter-btn" data-type="lost" type="button">Lost Items</button>
+        <button class="filter-btn" data-type="found" type="button">Found Items</button>
+      </div>
+
+      <div class="search-wrap" style="min-width:280px;">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" id="item-search" placeholder="Search item or location..." />
+      </div>
+    </div>
+
+    <div class="items-grid" id="items-grid"></div>
+  </main>
+
+  <!-- Add Item Modal -->
+  <div class="modal" id="item-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>Add Lost/Found Item</h2>
+        <button class="close-btn" id="close-modal-btn" type="button">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="item-form">
+        <div class="form-group">
+          <label>Item Type</label>
+          <select id="type" required>
+            <option value="lost">I Lost Something</option>
+            <option value="found">I Found Something</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Item Name</label>
+          <input type="text" id="title" placeholder="Example: ID Card, Earbuds, Calculator" required />
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <select id="category" required>
+            <option value="Electronics">Electronics</option>
+            <option value="Documents">Documents</option>
+            <option value="Study Material">Study Material</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <select id="location" required>
+            <option value="Turing Block">Turing Block</option>
+            <option value="Galileo Block">Galileo Block</option>
+            <option value="Edison Block">Edison Block</option>
+            <option value="Newton Block">Newton Block</option>
+            <option value="Martin Luther Block">Martin Luther Block</option>
+            <option value="Rockfeller Block">Rockfeller Block</option>
+            <option value="Central Exploratorium & Library">Central Exploratorium & Library</option>
+            <option value="Square One Food Court">Square One Food Court</option>
+            <option value="Indoor Sports Complex & Gymnasium">Indoor Sports Complex & Gymnasium</option>
+            <option value="Exploratorium Auditorium">Exploratorium Auditorium</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="description" rows="3"
+            placeholder="Mention color, brand, unique mark, sticker, or any important detail." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Information</label>
+          <input type="text" id="contact" placeholder="Phone number or Instagram ID" required />
+        </div>
+
+        <div class="form-group">
+          <label>Image URL Optional</label>
+          <input type="url" id="image" placeholder="Paste image URL or leave empty" />
+        </div>
+
+        <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center;">
+          <i class="fa-solid fa-paper-plane"></i> Publish Item
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p><b>CHITKARA CONNECT</b> — Lost & Found Portal</p>
+      <p><a href="map.html">Open Campus Navigator</a></p>
+    </div>
+  </footer>
+
+  <!-- Important: Script order must be exactly like this -->
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/lost-found.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Chitkara Connect</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="images/images.png" alt="Chitkara University" class="brand-logo">
+        <div class="brand-content">
+          <h1>CHITKARA</h1>
+          <span>CONNECT</span>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <section class="auth-page auth-page-split">
+    <div class="auth-split-container">
+      <!-- Left Side: Project Information with Background -->
+      <div class="auth-split-left-info">
+        <div class="project-info">
+          <div class="project-info-content">
+            <div class="project-icon">
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <h2>CHITKARA CONNECT</h2>
+            <p class="project-tagline">Your Campus Companion</p>
+            
+            <div class="features-list">
+              <div class="feature-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <div>
+                  <h3>Campus Navigator</h3>
+                  <p>Search and locate important blocks and facilities inside Chitkara University Punjab Campus.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <i class="fa-solid fa-box-open"></i>
+                <div>
+                  <h3>Lost & Found Portal</h3>
+                  <p>Post and browse lost or found items reported by students with location details and contact info.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <i class="fa-solid fa-lock"></i>
+                <div>
+                  <h3>Secure Access</h3>
+                  <p>Only logged-in students can post items. Secure authentication using Chitkara University email.</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Login to access the campus map, report lost & found items, and stay connected with the campus community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Login Form with Background -->
+      <div class="auth-split-right-form">
+        <div class="auth-card">
+          <h1>Welcome Back</h1>
+          <p>Login with your Chitkara University email ID to post lost or found items.</p>
+
+          <form id="login-form">
+            <div class="form-group">
+              <label>Chitkara Email ID</label>
+              <input type="email" id="email" placeholder="example@chitkara.edu.in" required />
+            </div>
+
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              <i class="fa-solid fa-right-to-bracket"></i> Login
+            </button>
+          </form>
+
+          <div class="auth-switch">
+            New user?
+            <a href="signup.html">Create an account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/auth.js"></script>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim().toLowerCase();
+      const password = document.getElementById("password").value;
+
+      if (!isValidChitkaraEmail(email)) {
+        alert("Please use a valid Chitkara University email ID.");
+        return;
+      }
+
+      const users = getUsers();
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (!user) {
+        alert("Invalid email or password.");
+        return;
+      }
+
+      setCurrentUser({
+        name: user.name,
+        email: user.email
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const next = params.get("next");
+
+      alert("Login successful.");
+
+      // After login, open home page by default unless a 'next' param exists
+      if (next) {
+        window.location.href = next;
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+
+</body>
+
+</html>
