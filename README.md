@@ -18,7 +18,7 @@ The project combines a **Campus Navigator**, **Lost & Found Portal**, and **Stud
 
 ### 🛠️ Technologies Used
 
-**HTML5 • CSS3 • JavaScript • Leaflet.js • Font Awesome • LocalStorage**
+**HTML5 • CSS3 • JavaScript • LocalStorage**
 
 ### 🎯 Project Objective
 
